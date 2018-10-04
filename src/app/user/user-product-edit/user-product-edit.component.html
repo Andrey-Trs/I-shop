@@ -1,0 +1,32 @@
+<div class='box'>
+  <form #editForm="ngForm" *ngIf='retrievedObj' class='userProduct'>
+    <div class="titleAndPrice">
+        <label for="title" class='title'>Title</label>
+        <input type="text" class='productTitle' id='title' name='title' [(ngModel)] = 'retrievedObj.name'  #title="ngModel" requierd >
+        <label for="price" class='price'>Price</label>
+        <input type="number" id='price' name='price' #price='ngModel' [(ngModel)]= "retrievedObj.price" required>
+    </div>
+    <label for="categories" class='descripLabel'>
+      <span>Category</span>
+      <select name="categories" id="categories" ngModel required  >
+        <option *ngFor = 'let category of categories' [value]="category" class='option'> {{ category }} </option>
+      </select>
+    </label>
+    <label for="description" class='descripLabel'>
+      <span>Description</span>
+      <textarea id='description' name='description' [(ngModel)] = 'retrievedObj.description' #description="ngModel" required>
+      </textarea>
+    </label>
+    <div class="productImages" >
+      <div class="imgWrapper" *ngFor='let img of retrievedObj.images, let i = index'>
+          <span class='removeImg' (click)='onRemove(i)'>x</span>
+          <div class="imageBox"  >
+              <img [src]="retrievedObj.images[i]">
+          </div>
+      </div>
+    </div>
+    <div class='buttonBox'>
+      <button type='submit' (click)='saveChanges(editForm)' class='saveBtn' [disabled]="!editForm.valid">Save changes</button>
+    </div>
+  </form>
+</div>

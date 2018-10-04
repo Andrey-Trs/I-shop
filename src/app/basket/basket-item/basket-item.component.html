@@ -1,0 +1,12 @@
+<tr>
+  <td><span class='removeBtn' (click)='onRemove()'>x</span></td>
+  <td><img [src]="productItem.images[0]" alt="" class='itemImg'></td>
+  <td>{{ productItem.name }}</td>
+  <td><span class='price'>{{ productItem.price }} грн</span></td>
+  <td>
+    <button class="button minusBtn" type='button' (click)='onDecrease()'>-</button>
+    <span class='quantity'>{{ productItem.amount }}</span>
+    <button class="button plusBtn" type='button' (click)='onIncrease()'>+</button>
+  </td>
+  <td><span>{{ totalPrice }}</span>грн</td>
+</tr>

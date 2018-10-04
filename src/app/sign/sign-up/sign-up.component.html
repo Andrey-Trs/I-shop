@@ -1,0 +1,50 @@
+
+<div class="signUpBox" @slideDownForm>
+  <form [formGroup] = 'signUpForm' (ngSubmit) = 'onSubmit()' class='signUpForm'>
+    <h4>Create an account</h4>
+    <div class="form-group">
+      <input type="email" id='email' #email class='sigUp-input' formControlName='email' placeholder="Email address" required>
+    </div>
+    <div class="alertMessage"
+    *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched">
+      <div *ngIf="signUpForm.get('email').errors['required']">
+        Enter your email address
+      </div>
+      <div *ngIf="signUpForm.get('email').errors['email']">
+        Emaill addres is not valid
+      </div>
+    </div>
+    <div class="reservedEmail"
+    *ngIf = "reservedEmail">
+      <p>User with this email is already registered</p>
+    </div>
+    <div class="form-group">
+      <input type="password" class='sigUp-input' id='pass' #pass formControlName='pass' required minlength="6" placeholder="Password ( more than 6 symbols )">
+    </div>
+    <div class="alertMessage"
+    *ngIf="signUpForm.get('pass').invalid && signUpForm.get('pass').touched">
+      <div *ngIf="signUpForm.get('pass').errors['required']">
+        Create password (more than 6 symbols)
+      </div>
+      <div *ngIf="signUpForm.get('pass').errors['minlength']">
+        Password should contain more than 6 symbols
+      </div>
+    </div>
+    <div class="form-group">
+        <input  type="password" class='sigUp-input' id='confirm' formControlName='confirmation' required minlength="6" placeholder='Confirm password'>
+      </div>
+      <div class="alertMessage"
+      *ngIf="signUpForm.get('confirmation').invalid && signUpForm.get('confirmation').touched">
+        <div *ngIf="signUpForm.get('confirmation').errors['required']">
+         Confirm your password!
+        </div>
+        <div *ngIf="signUpForm.get('confirmation').errors['mistake']">
+          Password don't match
+        </div>
+      </div>
+      <button 
+      id="authBtn"
+      type="submit"
+      [disabled]="signUpForm.invalid">Sign up</button>
+  </form>
+</div>

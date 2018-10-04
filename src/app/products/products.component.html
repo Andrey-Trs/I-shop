@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="main">
+        <app-categories class='categories'></app-categories>
+        <div class="productList">
+            <div id = 'loadingBox' *ngIf = 'loading'>
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+          <div class="productItem"
+          *ngFor = "let product of productsList | filterName: nameToFind | categories: chosenCategory | paginate: { itemsPerPage: 16, currentPage: p }  ; let i = index">
+            <div class='upperPart'>
+                <img [src]="product.images[0]" alt="Image" class='productImg'>
+            </div>
+            <div class='bottomPart'>
+              <div class="mainInfo">
+                  <p class='name'>{{ product.name }}</p>
+                  <p>Price <span>{{ product.price }} грн</span></p>
+              </div>
+              <div class="btnBox">
+                  <button id="detailsBtn" class='itemBtn' type='button' [routerLink] = "[product.id]">Details</button>
+                  <button id="toBuyBtn" class='itemBtn' type='button' (click) = "addToBucket(product.id)" *ngIf = "product.state == 'unchecked' else checked" >
+                    <span>Add to cart</span>
+                  </button>
+                  <ng-template #checked>
+                    <span id='added'><i class="fa fa-check-circle" id='correct'></i><span id='inBasket'>Added</span></span>
+                  </ng-template>
+              </div>
+           </div>
+          </div>
+          <div class='notFoundMessage' *ngIf="(productsList | filterName: nameToFind | categories: chosenCategory | paginate: { itemsPerPage: 16, currentPage: p }).length === 0 && !loading">
+              <p id='notFound'>Sorry, your search  did not match any products. Please try again!</p>
+          </div>
+        </div>
+    </div>
+    <div>
+        <pagination-controls (pageChange) = "p = $event" class='pageNavigation'></pagination-controls>
+    </div>
+</div>
+

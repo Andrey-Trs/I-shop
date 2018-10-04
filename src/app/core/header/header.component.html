@@ -1,0 +1,33 @@
+<header>
+  <div class="logo" @slideDownAnim>
+    <h3 (click)='onMainPage()'>The Logo</h3>
+  </div>
+  <nav @slideRightAnim>
+        <div class="signBox horSlide" *ngIf = "!authService.isAuthenticated()" [ngClass]="{'expandedBox': isExpanded}" (mouseleave) = 'isExpanded = false'> 
+          <p (click) = 'changeState()'>Authorization 
+            <i class="fa" [ngClass]="{ 'fa-caret-down': !isExpanded, 'fa-caret-up': isExpanded }"></i>
+          </p>
+          <div [hidden]='!isExpanded'>
+              <button type='button' class='headerBtn' [routerLink] = "['/signUp']" (click) = 'isExpanded = false'>Create an account</button>
+              <button type='button' class='headerBtn' [routerLink] = "['/signIn']" (click) = 'isExpanded = false'>Sign In </button>
+          </div>
+        </div>
+          <div *ngIf = "authService.isAuthenticated()" class="userBox" (mouseleave) = 'openedUserMenu = false'>
+            <div class="userHeader">
+                <img src="../../assets/icons/user.png" class="userImg">
+                <span (click) = 'changeUserMenuState()'>
+                  {{userEmail}}
+                  <i class="fa" [ngClass]="{ 'fa-caret-down': !openedUserMenu, 'fa-caret-up': openedUserMenu }"></i>
+                </span>
+            </div>
+            <div [hidden]='!openedUserMenu'>
+              <button class = 'headerBtn' type="button" [routerLink]="['userProducts']" *ngIf = "!authService.newUser">My products</button>
+              <button class = "headerBtn" type="button" [routerLink]="['newProduct']">Add new product</button>
+              <button class = "headerBtn" type="button" (click) = 'onExit()'>Log out</button>
+            </div>
+          </div>
+          <div class="basketWrapper horSlide">
+            <button class='headerBtn' id='basketBtn' type="button" [routerLink] = "['basket']">{{toBuyItemsQuantity}}</button>
+          </div>
+  </nav>
+</header>

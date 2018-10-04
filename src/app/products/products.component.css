@@ -1,0 +1,243 @@
+.wrapper{
+    background: #D3CCE3;
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 20% 80%;  
+}
+
+.productList{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 84vh;
+    padding: 40px 0px;
+}
+.productItem{
+    display: grid;
+    grid-template-rows: 180px 140px;
+    font-family: Montserrat;
+    box-sizing: border-box;
+    width: 235px;
+    height: 320px;
+    border: 1px solid rgb(237, 236, 236);
+    background: rgba(237, 236, 236, 0.8);
+    margin: 15px 0px;
+    transition: .4s;
+}
+
+.productItem:hover{
+    box-shadow: 
+        12px 0 15px -10px #99ccff, 
+        -12px 0 8px -10px #99ccff;
+    transform: scale(1.01);
+}
+
+.upperPart{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.bottomPart{
+    height: 140px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productImg{
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 4px;
+    width: 235px;
+    height: 180px;
+    object-fit: fill;
+    overflow: hidden;
+}
+p {
+    width: 90%;
+    height: 35px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+p span {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    height: 35px;
+    background-color: #b3ffb3;
+}
+.name {
+    display: block;
+    text-align: center;
+}
+.btnBox{
+    width: 100%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#detailsBtn, #toBuyBtn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .6s;
+    font-size: 0.8em;
+}
+
+#detailsBtn {
+    border-color: #99ccff;
+    background-color: transparent;
+    color: blue;
+}
+
+
+#detailsBtn:hover {
+    background-color: #99ccff;
+    color: black;
+}
+
+#toBuyBtn {
+    background-color: transparent;
+    border-color : #4dff4d;
+    color: green;
+}
+
+#toBuyBtn:hover {
+    background-color: #4dff4d;
+    color: black;
+}
+
+#added{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid #4dff4d;
+    color: rgb(45, 179, 0)
+}
+
+#inBasket{
+    font-size: 0.8em;
+}
+#correct{
+    font-size: 1.7em;
+}
+
+.pageNavigation{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.pageNavigation /deep/ .ngx-pagination .current {
+    background: #4dff4d;
+    border-radius: 50%;
+}
+
+.pageNavigation /deep/ .ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+#loadingBox{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundMessage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundMessage p {
+    text-align: center;
+}
+
+#notFound {
+    width: fit-content;
+    text-align: center;
+    font-weight: 500;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgb(51, 204, 51);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+  
+

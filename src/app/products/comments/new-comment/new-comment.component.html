@@ -1,0 +1,7 @@
+<form id='feedbackForm' #f="ngForm" (ngSubmit)="onAddComment(f)">
+    <div>
+        <input type="text" id='nameInput' class='common' name='userName' ngModel #nameInput="ngModel" required placeholder="    Your name goes here">
+        <textarea id='feedbackArea' class='common' name="newComment" ngModel  #feedbackArea="ngModel" required placeholder="    Your comment goes here"></textarea>
+    </div>
+    <button id='sendFeedback' class='common' type='submit' [disabled]="!f.valid">Send</button>
+</form>

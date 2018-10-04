@@ -1,0 +1,28 @@
+<div id="container">
+  <div 
+    ng2-carouselamos
+    class = 'slides-wrapper'
+    [width] = "700"
+    [$prev] = "prev"
+    [$next] = "next"
+    [items]='items'
+    [$item] = "item">
+  </div>
+</div>
+
+<ng-template #prev>
+  <i class="fa fa-angle-left" id='prev'></i>
+</ng-template>
+
+<ng-template #next>
+  <i class="fa fa-angle-right" id='next'></i>
+</ng-template>
+
+<ng-template #item let-item let-i="index">
+  <div class="images">
+    <img [src]="item" alt="" class='slideImages'>
+  </div>
+</ng-template>
+<div class="closeBox">
+  <button id="exitButton" type='button' (click)="showSlider()"><span>x</span></button>
+</div>

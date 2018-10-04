@@ -1,0 +1,16 @@
+footer{
+    background: #00416A;
+    background: -webkit-linear-gradient(to left, #E4E5E6, #00416A);
+    background: linear-gradient(to left, #E4E5E6, #00416A);
+    font-family: Montserrat;
+    font-size: 0.85em;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+}
+p{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+    color: rgb(26, 26, 26);
+}

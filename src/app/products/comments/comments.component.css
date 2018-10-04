@@ -1,0 +1,65 @@
+.main {
+    width: 95%;
+    margin: 30px  auto;
+    border-top: 1px solid rgb(102, 255, 51);
+    border-bottom: 1px solid rgb(102, 255, 51);
+    padding: 20px;
+    font-family: Montserrat;
+}
+
+.header {
+    margin: 30px 0px 0px 20px;
+}
+h3{
+    text-align: center;
+    margin: 40px auto;
+}
+
+h4{
+    text-align: center;
+    margin-right:50px;
+}
+
+.addFeedback{
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    background-color:rgba(153, 153, 255, 1);
+    padding: 4px 8px;
+}
+
+.commentList{
+    list-style: none;
+}
+
+.comment{
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0px;
+}
+
+.date{
+    font-size: 0.8em;
+    color: rgb(140, 140, 140);
+    margin-bottom: 0px;
+}
+
+.text{
+    font-size: 0.9em;
+    margin-bottom: 0px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+.commentAuthor {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 0px;
+}
+.nameAndDateBox{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}

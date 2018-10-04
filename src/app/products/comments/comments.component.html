@@ -1,0 +1,21 @@
+<div class="main" #topPage>
+  <div class='header'>
+    <h4>Feedbacks about {{ name }}</h4>
+    <button class='addFeedback' (click) = 'writeComponentMode = !writeComponentMode'>Write feedback</button>
+  </div>
+  <div class="newCommetBox" *ngIf = 'writeComponentMode'>
+      <app-new-comment [key]='key'></app-new-comment>
+  </div>
+  <ul class='commentList' *ngIf='commentsArr?.length else emptyArea'>
+    <li class='comment' *ngFor="let comment of commentsArr; let i = index" [@onAdd]>
+      <div class='nameAndDateBox'>
+        <p class='commentAuthor'>{{ comment.name }}</p>
+        <p class='date'>{{comment.date | date }}</p>
+      </div>
+      <p class='text'>{{ comment.comment }}</p>
+    </li>
+  </ul>
+  <ng-template #emptyArea>
+    <h3>There are no feedback about this product</h3>
+  </ng-template>
+</div>

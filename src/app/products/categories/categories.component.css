@@ -1,0 +1,94 @@
+@font-face{
+    font-family: Montserrat;
+    src: url(../../../assets/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+.sidebarCategories{
+    width: 100%;
+    font-family: Montserrat;
+    padding: 40px 0px;
+}
+
+.categories{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    cursor: pointer;
+}
+
+.category{
+    list-style: none;
+    margin: 20px 0px 20px 10px;
+    padding: 10px 20px 10px 20%;
+    width: 100%;
+    border-radius: 12px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    font-size: 0.8em;
+    transition: .6s;
+}
+
+.category:hover {
+    box-shadow: 
+         0px 11px 8px -10px #99ccff,
+        0px -11px 8px -10px #99ccff;
+        color: green;
+}
+
+.filterMenu{
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    cursor: pointer;
+}
+
+input {
+    height: 39px;
+    width: 85%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.searchBox{
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    display: flex;
+    width: 100%;
+    margin: 20px 0px 20px 10px;
+}
+
+.imgBox{
+    display: inline-flex;
+    width: 40px;
+    height: 38px;
+    border-left: 1px solid gray;
+    border-radius: 0px 11px 12px 0px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .6s;
+    background-color: rgb(112, 219, 112);
+}
+
+.imgBox:hover {
+    background-color: transparent;
+}
+
+.glass {
+    width: 25px;
+    height: 25px;
+}
+
+.searchLoop{
+    font-size: 1.1em;
+    color: white;
+    transition: .6s;
+}
+
+.active {
+    color: rgb(112, 219, 112);
+}

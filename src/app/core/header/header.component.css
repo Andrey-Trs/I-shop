@@ -1,0 +1,138 @@
+header{
+    font-family: Montserrat;
+    display: grid;
+    grid-template-columns: 20%  80%;
+    height: 16vh;
+    padding: 30px;
+    border-bottom: 1px solid rgba(182, 182, 182, 0.75);
+    -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    background: #00416A;
+    background: -webkit-linear-gradient(to left, #E4E5E6, #00416A);
+    background: linear-gradient(to left, #E4E5E6, #00416A);
+}
+.logo{
+    color: rgba(182, 182, 182, 0.75);
+    cursor: pointer;
+}
+.headerBtn{
+    display: block;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    font-size: 0.9em;
+    color: gray;
+    background-color: transparent;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;  
+}
+
+.headerBtn:hover{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    border: 1px solid black;
+    transition: .5s;
+}
+
+p {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+i {
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+.signBox{
+    width: 170px;
+    height: 40px;
+    padding: 10px 0px 0px 0px;
+    position: relative;
+    top: 3px;
+    transition: .6s;
+    border-radius: 6px;
+}
+
+.signBox:hover {
+    background: rgb(245, 245, 220);
+}
+
+.expandedBox{
+    overflow: none;
+    height: auto;
+}
+
+
+.signBox p {
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content:  flex-end;
+}
+
+.basketWrapper{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: .5s;
+    margin: -18px 0px 0px 20px;
+    padding: 7px;
+}
+
+.basketWrapper:hover {
+    background: rgba(245, 245, 220, 0.6)
+}
+
+#basketBtn {
+    background-image: url("../../../assets/icons/basket.png");
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    margin: 4px;
+    border: none;
+}
+
+.userBox {
+    width: 215px;
+    min-height: 30px;
+    padding: 10px 0px 5px 0px;
+    position: relative;
+    top: 3px;
+    transition: .6s;
+    border-radius: 6px;
+    margin-right: 30px;
+}
+
+.userBox:hover {
+    background-color: rgb(245, 245, 220);
+}
+
+.userBox span {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.userHeader {
+    display: flex;
+    position: relative;
+    top: 3px;
+}
+
+.userImg{
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    position: relative;
+    top: -7px;
+}
+
+

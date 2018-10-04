@@ -1,0 +1,93 @@
+.signUpBox{
+    width: 100%;
+    min-height: 84vh;
+    padding: 20px 40px;
+    background: #D3CCE3;
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+}
+
+.signUpForm{
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    font-family: Montserrat;
+    font-weight: 200;
+}
+
+.sigUp-input{
+    display: block;
+    width: 86%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid lightgray;
+    font-style: italic;
+    color: lightgray;
+}
+
+::placeholder{
+    color: lightgray;
+    text-align: center;
+}
+
+#authBtn{
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 50%;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid rgb(179, 179, 179);
+    border-bottom: none;
+    transition: .6s;
+}
+
+#authBtn:hover{
+    background-color:  rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+h4{
+    text-align: center;
+    height: 70px;
+    line-height: 65px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px 20px 0px 0px;
+    color: rgb(179, 179, 179);
+}
+input{
+   border-bottom: 2px solid transparent;
+    transition: .5s;
+}
+input.ng-valid.ng-touched {
+    border-bottom: 2px solid green;
+}
+input.ng-invalid.ng-touched {
+    border-bottom: 1px solid rgb(128, 0, 0);
+}
+.reservedEmail{
+    text-align: center;
+    font-size: 0.8em;
+    color: rgb(128, 0, 0);
+    border-top: 1px solid rgb(128, 0, 0);
+    border-bottom: 1px solid rgb(128, 0, 0);
+}
+.reservedEmail p {
+    text-align: center;
+    height: 30px;
+    line-height: 42px;
+}
+
+.alertMessage{
+    text-align: center;
+    color: rgb(128, 0, 0);
+    font-size: 0.8em;
+}

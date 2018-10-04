@@ -1,0 +1,44 @@
+<div class="productItem">
+    <h3 id='productName'>{{ chosenProduct?.name }}</h3>
+    <div class="details">
+        <div class="allImages">
+          <div class="smallImgWrapper" *ngFor = "let img of chosenProduct?.images, let i = index" (click) = 'changeMainImage(i)'>
+              <img 
+              [src]="chosenProduct?.images[i]"  
+              class="smallImg" 
+              (click) = 'changeMainImage(i)'>
+          </div>
+        </div>
+        <div class="imageWrapper">
+            <img id = 'main-image' [src]='currentImg' (click)="showSlider()">
+        </div>
+        <div class="rightPart">
+            <div class='toBuyWrapper'>
+              <p class='price'>
+                <span>Price: </span>
+                <span id='summ'>{{ chosenProduct?.price }} грн</span>
+              </p>
+              <div class='buyBtn'>
+                  <button id='buyBtn'  type='button' *ngIf='chosenProduct?.state === "unchecked" else inBasket' (click) = "addToBasket()">Add to cart</button>
+                  <ng-template #inBasket class='buyBtn'>
+                      <span id='added'><i class="fa fa-check-circle" id='correct'></i><span id='inBasket'>Added</span></span>
+                  </ng-template>
+              </div>
+            </div>
+            <div class='descriptionPart'>
+              <span>Description: </span>
+              <p class='description'>{{ chosenProduct?.description }}</p>
+            </div>
+            <button id="commentsViewBtn" type='button' (click)="showComments()">Feedback</button>
+        </div>
+</div>
+<div *ngIf="sliderMode" class="imagesBox" [@show]>
+  <app-product-images [items] = 'chosenProduct?.images' (closed) = 'showSlider($event)'></app-product-images>
+</div>
+<div class="commentsBox" *ngIf='commentsViewMode'>
+  <app-comments 
+    [name] = 'chosenProduct?.name'
+    [key] = 'chosenProduct?.id'></app-comments>
+</div>
+
+

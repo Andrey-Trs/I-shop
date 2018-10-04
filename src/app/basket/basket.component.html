@@ -1,0 +1,35 @@
+<div class="container" >
+  <div>
+    <h3>Shopping cart</h3>
+    <div class="emptyCart" *ngIf = 'toBuyProducts && toBuyProducts.length === 0'>
+      <img src="../../assets/icons/emptyCart.png">
+      <span>Your shopping cart is empty</span>
+    </div>
+    <div *ngIf = 'toBuyProducts && toBuyProducts.length > 0'>
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="font-weight-normal">Price</th>
+            <th class="font-weight-normal">Quantity</th>
+            <th class="font-weight-normal">Sum</th>
+          </tr>
+        </thead>
+        <tbody >
+          <app-basket-item
+          *ngFor = 'let item of toBuyProducts; let i = index '
+          [productItem] = 'item'
+          [id] = 'i'></app-basket-item>
+        </tbody>
+      </table>
+      <div class='conclusion'>
+        <div class='totalPrice'>
+          <p>Totally:  {{totalPrice}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

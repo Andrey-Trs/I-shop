@@ -1,0 +1,32 @@
+<div class="signInBox" @slideDownForm>
+  <form  #f="ngForm" (ngSubmit)="onSignIn(f)" class='signInForm'>
+  <h4>My account</h4>
+  <div class="form-group">
+    <input  type="email" id='email' name='email' ngModel class="sigIn-input" email required  #email placeholder="email address">
+    <span class="help-block" *ngIf="!email.valid && email.touched" >Email is not valid</span>
+  </div>
+  <div class="form-group">
+    <input type="password" id='pass' name='pass' ngModel class='sigIn-input' required #pass="ngModel" placeholder="Password">
+    <span class="help-block" *ngIf="pass.invalid && pass.touched" >Enter your password</span>
+  </div>
+  <div class="wrongData" >
+      <p *ngIf="wrongUserEmail">User with such email address was not found</p>
+      <p *ngIf="wrongUserPass">Password is incorrect</p>
+  </div>
+  <div class="forgotBox">
+    <span (click) = 'forgotMenu = !forgotMenu' class='forgotBtn'>Forgot Password?</span>
+  </div>
+  <div class="forgotMenu" *ngIf = "forgotMenu">
+    <p>
+      Enter your email address and press 'New password'</p>
+    <button 
+    class="btn btn-outline-primary" 
+    (click) = "sendNewPass()"
+    type='button'>New password</button>
+  </div>
+  <button 
+  class="btn"
+  type='submit'
+  [disabled]="!f.valid">Sign In</button>
+  </form>
+</div>

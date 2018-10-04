@@ -1,0 +1,6 @@
+<div>
+  <app-users-products-item
+  *ngFor = "let product of userProducts, let i = index"
+  [product] = 'product'
+  [index] = 'i'></app-users-products-item>
+</div>

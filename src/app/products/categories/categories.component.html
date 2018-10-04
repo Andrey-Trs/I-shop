@@ -1,0 +1,17 @@
+<div class='sidebarCategories' [@listAnimation]="categories.length">
+  <div class="filterMenu">
+      <div class="searchBox item">
+          <input type="text" id='searchProduct' #toFindProduct>
+          <div class="imgBox" (mouseenter)='isActive = !isActive' (mouseleave)='isActive = !isActive'>
+            <i class="fa fa-search searchLoop" (click)=findProduct() [class.active]=isActive></i>
+          </div>
+      </div>
+  </div>
+  <ul class='categories'>
+    <li 
+    class="category item" 
+    *ngFor = 'let category of categories; let i = index' 
+    (click)='chosenCategory(category)'
+     > {{ category }} </li>
+  </ul>
+</div>

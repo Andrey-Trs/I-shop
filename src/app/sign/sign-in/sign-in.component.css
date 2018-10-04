@@ -1,0 +1,106 @@
+.signInBox{
+    width: 100%;
+    height: 84vh;
+    padding-top: 50px;
+    background: #D3CCE3;
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+}
+.signInForm{
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    font-family: Montserrat;
+    font-weight: 200;
+}
+.forgotBox{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.forgotMenu p{
+    font-size: 0.9em;
+    width: 86%;
+    margin: 0 auto;
+    color: lightgray;
+}
+
+.forgotBox span{
+    border-bottom: 1px solid transparent;
+}
+.forgotBox span:hover{
+    transition: .5s;
+    border-bottom: 1px solid lightgray;
+}
+.signInBox button {
+    display: block;
+    width: 50%;
+    height: 50px;
+    border-radius: 7px;
+    margin: 20px auto;
+    padding: 5px 30px;
+    transition: .6s;
+    background-color: transparent;
+    border: 1px solid  rgb(179, 179, 179);
+    cursor: pointer;
+}
+
+.signInBox button:hover {
+    background-color:  rgba(255, 255, 255, 0.7);
+}
+
+h4{
+    text-align: center;
+    height: 70px;
+    line-height: 65px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px 20px 0px 0px;
+    color: rgb(179, 179, 179);
+}
+.wrongData{
+    font-size: 14px;
+    text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+    border-bottom: 1px solid rgb(128, 0, 0);
+}
+
+.help-block{
+    display:block;
+    width: 86%;
+    margin: 10px auto;
+    text-align: center;
+    color: rgb(128, 0, 0);
+}
+
+.sigIn-input {
+    display: block;
+    width: 86%;
+    height: 50px;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid lightgray;
+    font-style: italic;
+    color: lightgray;
+}
+
+::placeholder{
+    color: lightgray;
+    text-align: center;
+}
+
+.forgotBtn {
+    display: block;
+    margin: 10px 7% 10px 0px;
+    font-style: italic;
+    color: lightgray;
+    font-weight: 100;
+}

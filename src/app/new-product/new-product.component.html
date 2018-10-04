@@ -1,0 +1,44 @@
+<div class="newProductBox" @slideUpForm>
+  <form #productForm='ngForm'>
+    <h3>New product</h3>
+    <label for="name">
+      <span>Product name </span>
+      <input type="text"  class='productInput' id='name' name='newName' ngModel #name="ngModel" required>
+    </label>
+    <label for="categories">
+      <span>Product category</span>
+      <select name="categories" id="categories" ngModel required  >
+        <option *ngFor = 'let category of categories' [value]="category" class='option'> {{ category }} </option>
+      </select>
+    </label>
+    <label for="description">
+        <span>Description </span>
+        <textarea id="description" name='newDescription' ngModel #description='ngModel' required></textarea>
+    </label>
+    <label for="price">
+      <span>Price </span>
+      <input type="number" id='price' class='productInput' name='newPrice' ngModel #price='ngModel' required>
+    </label>
+    <div class="uploadBox">
+      <span></span>
+      <div class="photoBox">
+        <label for="uploadFile" id='uploadLabel'>
+          Choose photos
+          <input  type="file" (change)='onAddImg($event)' name='uploadFile' id='uploadFile' ngModel #file='ngModel' required>
+        </label>
+        <img
+        *ngFor = 'let img of images'
+        class='productImg' 
+        [src]="img.imgUrl" 
+        alt="product">
+      </div>
+    </div>
+    <div id='buttonBox'>
+        <span id='blank'></span>
+        <button class="btn btn-outline-primary" (click) = "onAdd(productForm)" type='submit' id='addButton' [disabled]="!productForm.valid">Publish</button>  
+    </div>
+  </form>
+</div>
+<div id="successWindow">
+    <router-outlet></router-outlet>
+</div>
